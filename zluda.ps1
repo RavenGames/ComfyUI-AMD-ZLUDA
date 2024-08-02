@@ -1,7 +1,6 @@
 Set-ExecutionPolicy Bypass -Scope Process
 $filepath = ".\cuda_malloc.py"
 
-# Stara funkcja do zamiany
 $old_function = @"
 def cuda_malloc_supported():
     try:
@@ -16,7 +15,6 @@ def cuda_malloc_supported():
     return True
 "@
 
-# Nowa funkcja
 $new_function = @"
 def cuda_malloc_supported():
     try:
@@ -39,7 +37,6 @@ def cuda_malloc_supported():
 
 $filepath2 = ".\comfy\model_management.py"
 
-# Stara funkcja do zamiany
 $old_function2 = @"
 def get_torch_device_name(device):
     if hasattr(device, 'type'):
@@ -62,7 +59,6 @@ except:
     logging.warning("Could not pick default device.")
 "@
 
-# Nowa funkcja
 $new_function2 = @"
 def get_torch_device_name(device):
     if hasattr(device, 'type'):
