@@ -60,11 +60,11 @@ set "endTime=%time: =0%"
 set "end=!endTime:%time:~8,1%=%%100)*100+1!"  &  set "start=!startTime:%time:~8,1%=%%100)*100+1!"
 set /A "elap=((((10!end:%time:~2,1%=%%100)*60+1!%%100)-((((10!start:%time:~2,1%=%%100)*60+1!%%100), elap-=(elap>>31)*24*60*60*100"
 set /A "cc=elap%%100+100,elap/=100,ss=elap%%60+100,elap/=60,mm=elap%%60+100,hh=elap/60+100"
+echo
+cls
 echo ..................................................... 
 echo *** Installation is completed in %hh:~1%%time:~2,1%%mm:~1%%time:~2,1%%ss:~1%%time:~8,1%%cc:~1% . 
 echo *** Execute the zluda.ps1 script via PowerShell from the context menu. 
 echo ..................................................... 
-echo.
-###echo *** Starting the Comfyui-ZLUDA for the first time, please be patient...
-###echo.
-###.\zluda\zluda.exe -- python main.py --auto-launch
+pause
+
